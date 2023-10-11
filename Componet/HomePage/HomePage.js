@@ -9,12 +9,15 @@ import {
   Pressable,
 } from "react-native";
 import React from "react";
-
+import { createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import { ScrollView } from "react-native-gesture-handler";
 import Icon from "react-native-vector-icons/Ionicons";
 export default function HomePage() {
+  const Tab = createBottomTabNavigator();
   const [text, onChangeText] = React.useState("");
   return (
     <View style={styles.container}>
+      <ScrollView>
       <ImageBackground
         source={require("../../assets/img/background.png")}
         resizeMode="cover"
@@ -68,6 +71,9 @@ export default function HomePage() {
             <Text style={styles.textr}>Nearest Restaurant</Text>
             <Text style={styles.textview}>View More</Text>
           </View>
+          {/* <ScrollView>
+
+          </ScrollView> */}
           <View style={styles.listrts}>
             <View style={styles.pro1}>
               <Image
@@ -88,7 +94,6 @@ export default function HomePage() {
               <Text style={styles.minutepro}>8 Mins</Text>
             </View>
           </View>
-
           <View style={styles.menu}>
             <Text style={styles.textr}>Popular Menu</Text>
             <Text style={styles.textview}>View More</Text>
@@ -107,42 +112,10 @@ export default function HomePage() {
               <Text style={styles.money}>$15</Text>
             </View>
           </View>
-        </View>
-        <View style={styles.menubar}>
-          <View>
-            <Icon
-              style={styles.searchIcon}
-              name="home-outline"
-              size={20}
-              color="#6B50F6"
-            />
-          </View>
-          <View>
-            <Icon
-              style={styles.searchIcon}
-              name="person-outline"
-              size={20}
-              color="#6B50F6"
-            />
-          </View>
-          <View>
-            <Icon
-              style={styles.searchIcon}
-              name="bag-outline"
-              size={20}
-              color="#6B50F6"
-            />
-          </View>
-          <View>
-            <Icon
-              style={styles.searchIcon}
-              name="chatbubbles-outline"
-              size={20}
-              color="#6B50F6"
-            />
-          </View>
-        </View>
+        </View>   
       </ImageBackground>
+      </ScrollView>
+      
     </View>
   );
 }
@@ -152,18 +125,19 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-
   },
   notificationIcon: {},
   textC: {
     fontSize: 30,
     fontWeight: "bold",
-    marginTop: 30,
+    marginTop: 40,
     marginBottom: 20,
-    marginRight:-40,
+    // marginLeft:40,
   },
   container: {
     flex: 1,
+    marginLeft:25,
+    marginRight:20
   },
   input: {
     height: 40,
@@ -173,7 +147,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#E6E1FF",
   },
   image: {
-    flex: 1,
+    // flex: 1,
   },
   imageads: {
     backgroundColor: "#6B50F6",
@@ -243,6 +217,7 @@ const styles = StyleSheet.create({
   textpro: {
     fontSize: 16,
     fontWeight: "bold",
+    marginRight:20,
   },
   imgpro: {
     width: 110,

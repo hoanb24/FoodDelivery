@@ -12,8 +12,10 @@ import React from "react";
 
 import Icon from "react-native-vector-icons/Ionicons";
 import { ScrollView } from "react-native";
+// import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 export default function Viewmore() {
   const [text, onChangeText] = React.useState("");
+  
   return (
     <View style={styles.container}>
     
@@ -22,6 +24,7 @@ export default function Viewmore() {
           resizeMode="cover"
           style={styles.image}
         >
+               <ScrollView>
           <View style={styles.top}>
             <Text style={styles.textC}>Find Your {`\n`}Favorite Food</Text>
             <Icon
@@ -55,15 +58,13 @@ export default function Viewmore() {
               />
             </View>
           </View>
-          <View style={styles.ads}>
-            <Text style={styles.textads}>Speacial Deal For {`\n`} October</Text>
-          </View>
+       
           
           <View style={styles.middle}>
             <View style={styles.restaurant}>
               <Text style={styles.textr}>Nearest Restaurant</Text>
             </View>
-            <ScrollView>
+       
             <View style={styles.listrts}>
               <View style={styles.pro1}>
                 <Image
@@ -124,46 +125,10 @@ export default function Viewmore() {
                 <Text style={styles.minutepro}>8 Mins</Text> */}
               </View>
             </View>
-            </ScrollView>
-            
-          </View>
-      
          
-          <View style={styles.menubar}>
-            <View>
-              <Text style={styles.homemenu}>Home</Text>
-              <Icon
-                style={styles.searchIconhome}
-                name="home-outline"
-                size={20}
-                color="#6B50F6"
-              />
-            </View>
-            <View>
-              <Icon
-                style={styles.searchiconme}
-                name="person-outline"
-                size={20}
-                color="#6B50F6"
-              />
-            </View>
-            <View>
-              <Icon
-                style={styles.searchIconcar}
-                name="bag-outline"
-                size={20}
-                color="#6B50F6"
-              />
-            </View>
-            <View>
-              <Icon
-                style={styles.searchIconchat}
-                name="chatbubbles-outline"
-                size={20}
-                color="#6B50F6"
-              />
-            </View>
           </View>
+        
+          </ScrollView>
         </ImageBackground>
 
     
