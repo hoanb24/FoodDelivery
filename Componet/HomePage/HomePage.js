@@ -21,7 +21,7 @@ export default function HomePage() {
         style={styles.image}
       >
         <View style={styles.top}>
-          <Text style={styles.textC}>Find Your {`\n`} Favorite Food</Text>
+          <Text style={styles.textC}>Find Your {`\n`}Favorite Food</Text>
           <Icon
             style={styles.notificationIcon}
             name="notifications-outline"
@@ -152,6 +152,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+
   },
   notificationIcon: {},
   textC: {
@@ -159,6 +160,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginTop: 30,
     marginBottom: 20,
+    marginRight:-40,
   },
   container: {
     flex: 1,
@@ -275,6 +277,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
   },
   textview: {
+    marginRight:10,
     color: "#6B50F6",
     fontSize: 13,
     fontWeight: "300",

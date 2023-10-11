@@ -1,10 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import HomePage from './Componet/HomePage/HomePage';
+// import HomePage from './Componet/HomePage/HomePage';
+import Viewmore from './Componet/HomePage/Viewmore';
 export default function App() {
   return (
     <View style={styles.container}>
-      <HomePage/>
+      {/* <HomePage/> */}
+      <Viewmore/>
     </View>
   );
 }
