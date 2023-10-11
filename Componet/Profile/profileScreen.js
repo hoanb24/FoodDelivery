@@ -1,11 +1,10 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-export default function Filter() {
+export default function ProfileScreen() {
   return (
     <View>
-      <Text>Filter</Text>
-      <Text></Text>
+      <Text>profileScreen</Text>
     </View>
   )
 }
