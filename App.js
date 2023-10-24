@@ -32,16 +32,19 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { createStackNavigator } from '@react-navigation/stack';
 import HomePage from './Componet/HomePage/HomePage';
 import Viewmore from './Componet/HomePage/Viewmore';
 const Tab = createMaterialBottomTabNavigator();
-
+const Stack = createStackNavigator();
 export default function App() {
   return (
-    <NavigationContainer>
+    <NavigationContainer style={styles.navbar}>
       <Tab.Navigator
         initialRouteName="Home"
-        barStyle={{ backgroundColor: 'white' }}
+        tabBarOptions={{
+          style: { backgroundColor: 'white' },
+        }}
       >
         <Tab.Screen
           name="Home"
@@ -54,7 +57,7 @@ export default function App() {
             headerShown: false,
           }}
         />
-        {/* <Tab.Screen
+        <Tab.Screen
           name="PopularRestaurant"
           component={Viewmore}
           options={{
@@ -64,8 +67,25 @@ export default function App() {
             ),
             headerShown: false,
           }}
-        /> */}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );
-}
+};
+
+const styles = StyleSheet.create({
+  navbar: {
+    position: 'absolute',
+    bottom: 0, // Adjust this value to position your navbar as needed
+    left: 0,
+    right: 0,
+    backgroundColor: 'white',
+    borderTopLeftRadius: 20, // Border radius for top-left corner
+    borderTopRightRadius: 20, // Border radius for top-right corner
+    borderTopWidth: 2, // Adjust this value to control the border thickness
+    borderTopColor: 'white', // Border color (set it to white for no visible border)
+    height: 60, // Adjust this value to control the height of the navbar
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+  },
+});

@@ -8,17 +8,25 @@ import {
   TextInput,
   Pressable,
 } from "react-native";
-import React from "react";
+import React, { useState } from 'react';
 
 import Icon from "react-native-vector-icons/Ionicons";
 import { ScrollView } from "react-native";
 // import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 export default function Viewmore() {
   const [text, onChangeText] = React.useState("");
-  
+  const [currentPage, setCurrentPage] = useState('Home');
+
+  const handleNavigation = (pageName) => {
+    if (currentPage === pageName) {
+      setCurrentPage('Home');
+    } else {
+      setCurrentPage(pageName);
+    }
+  };
+
   return (
     <View style={styles.container}>
-    
         <ImageBackground
           source={require("../../assets/img/background.png")}
           resizeMode="cover"
@@ -55,11 +63,12 @@ export default function Viewmore() {
                 name="filter-outline"
                 size={30}
                 color="#6B50F6"
+                onPress={() => handleNavigation('Filter')}
               />
             </View>
           </View>
-       
-          
+        
+          {currentPage === 'Home' && (
           <View style={styles.middle}>
             <View style={styles.restaurant}>
               <Text style={styles.textr}>Nearest Restaurant</Text>
@@ -127,7 +136,18 @@ export default function Viewmore() {
             </View>
          
           </View>
-        
+           )}
+             {currentPage === 'Filter' && (
+                <View>
+                  <View style={styles.type}>
+                    <Text style={styles.texttype}>Type</Text>
+                  </View>
+                  <View style={styles.types}>
+                    <Text>Restaurant</Text>
+                    <Text>Menu</Text>
+                  </View>
+                </View>
+             )}
           </ScrollView>
         </ImageBackground>
 
@@ -161,10 +181,11 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
+    padding:30,
   },
   input: {
     height: 40,
-    width: 250,
+    width: 360,
     padding: 10,
     borderRadius: 10,
     backgroundColor: "#E6E1FF",
@@ -309,7 +330,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     zIndex: 1,
     paddingTop: 10,
-    paddingLeft: 50,
+    paddingLeft: 97,
     color: "#9481F9",
   },
   searchiconme: {
@@ -346,6 +367,15 @@ const styles = StyleSheet.create({
   },
   menubar: {
     top: 30
-  }
-
+  },
+  texttype :{
+    fontSize:20,
+    fontWeight:"bold",
+    marginTop:10,
+    marginBottom:20,
+  },
+  types:{
+    flexDirection:"row",
+    
+  },
 });

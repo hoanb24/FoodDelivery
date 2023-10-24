@@ -9,113 +9,118 @@ import {
   Pressable,
 } from "react-native";
 import React from "react";
-import { createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { ScrollView } from "react-native-gesture-handler";
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import Icon from "react-native-vector-icons/Ionicons";
 export default function HomePage() {
   const Tab = createBottomTabNavigator();
   const [text, onChangeText] = React.useState("");
   return (
     <View style={styles.container}>
-      <ScrollView>
-      <ImageBackground
-        source={require("../../assets/img/background.png")}
-        resizeMode="cover"
-        style={styles.image}
-      >
-        <View style={styles.top}>
-          <Text style={styles.textC}>Find Your {`\n`}Favorite Food</Text>
-          <Icon
-            style={styles.notificationIcon}
-            name="notifications-outline"
-            size={30}
-            color="#6B50F6"
-          />
-        </View>
-        <View style={styles.service}>
-          <SafeAreaView>
-            <Icon
-              style={styles.searchIcon}
-              name="ios-search"
-              size={30}
-              color="#6B50F6"
-            />
-            <TextInput
-              style={styles.input}
-              onChangeText={onChangeText}
-              value={text}
-            />
-            <Text style={styles.textsearch}>What do you want to order?</Text>
-          </SafeAreaView>
-          <View>
-            <Icon
-              style={styles.filterIcon}
-              name="filter-outline"
-              size={30}
-              color="#6B50F6"
-            />
-          </View>
-        </View>
-        <View style={styles.ads}>
-          <Text style={styles.textads}>Speacial Deal For {`\n`} October</Text>
-          <Image
-            style={styles.imageads}
-            source={require("../../assets/img/adv.png")}
-          />
-          <Pressable style={styles.button}>
-            <Text style={styles.textbutton}>Buy Now</Text>
-          </Pressable>
-        </View>
-        <View style={styles.middle}>
-          <View style={styles.restaurant}>
-            <Text style={styles.textr}>Nearest Restaurant</Text>
-            <Text style={styles.textview}>View More</Text>
-          </View>
-          {/* <ScrollView>
+      <GestureHandlerRootView>
+        <ScrollView>
+          <ImageBackground
+            source={require("../../assets/img/background.png")}
+            resizeMode="cover"
+            style={styles.image}
+          >
+            <View style={styles.top}>
+              <Text style={styles.textC}>Find Your {`\n`}Favorite Food</Text>
+              <Icon
+                style={styles.notificationIcon}
+                name="notifications-outline"
+                size={30}
+                color="#6B50F6"
+              />
+            </View>
+            <View style={styles.service}>
+              <SafeAreaView>
+                <Icon
+                  style={styles.searchIcon}
+                  name="ios-search"
+                  size={30}
+                  color="#6B50F6"
+                />
+                <TextInput
+                  style={styles.input}
+                  onChangeText={onChangeText}
+                  value={text}
+                />
+                <Text style={styles.textsearch}>What do you want to order?</Text>
+              </SafeAreaView>
+              <View>
+                <Icon
+                  style={styles.filterIcon}
+                  name="filter-outline"
+                  size={30}
+                  color="#6B50F6"
+                />
+              </View>
+            </View>
+            <View style={styles.ads}>
+              <Text style={styles.textads}>Speacial Deal For {`\n`} October</Text>
+              <Image
+                style={styles.imageads}
+                source={require("../../assets/img/adv.png")}
+              />
+              <Pressable style={styles.button}>
+                <Text style={styles.textbutton}>Buy Now</Text>
+              </Pressable>
+            </View>
+            <View style={styles.middle}>
+              <View style={styles.restaurant}>
+                <Text style={styles.textr}>Nearest Restaurant</Text>
+                <Text style={styles.textview}>View More</Text>
+              </View>
+              {/* <ScrollView>
 
           </ScrollView> */}
-          <View style={styles.listrts}>
-            <View style={styles.pro1}>
-              <Image
-                style={styles.imgpro}
-                resizeMode="cover"
-                source={require("../../assets/img/pro1.png")}
-              />
-              <Text style={styles.textpro}>Vegan Resto</Text>
-              <Text style={styles.minutepro}>12 Mins</Text>
-            </View>
-            <View style={styles.pro2}>
-              <Image
-                style={styles.imgpro}
-                resizeMode="cover"
-                source={require("../../assets/img/pro2.png")}
-              />
-              <Text style={styles.textpro}>Healthy Food</Text>
-              <Text style={styles.minutepro}>8 Mins</Text>
-            </View>
-          </View>
-          <View style={styles.menu}>
-            <Text style={styles.textr}>Popular Menu</Text>
-            <Text style={styles.textview}>View More</Text>
-          </View>
+              <View style={styles.listrts}>
+                <View style={styles.pro1}>
+                  <Image
+                    style={styles.imgpro}
+                    resizeMode="cover"
+                    source={require("../../assets/img/pro1.png")}
+                  />
+                  <Text style={styles.textpro}>Vegan Resto</Text>
+                  <Text style={styles.minutepro}>12 Mins</Text>
+                </View>
+                <View style={styles.pro2}>
+                  <Image
+                    style={styles.imgpro}
+                    resizeMode="cover"
+                    source={require("../../assets/img/pro2.png")}
+                  />
+                  <Text style={styles.textpro}>Healthy Food</Text>
+                  <Text style={styles.minutepro}>8 Mins</Text>
+                </View>
+              </View>
+              <View style={styles.menu}>
+                <Text style={styles.textr}>Popular Menu</Text>
+                <Text style={styles.textview}>View More</Text>
+              </View>
 
-          <View style={styles.menupro}>
-            <Image
-              style={styles.imageads}
-              source={require("../../assets/img/menu1.png")}
-            />
-            <View>
-              <Text style={styles.textpro}>Green Noddle</Text>
-              <Text style={styles.minutepro}>Noodlle Home</Text>
+              <View style={styles.menupro}>
+                <Image
+                  style={styles.imageads}
+                  source={require("../../assets/img/menu1.png")}
+                />
+                <View>
+                  <Text style={styles.textpro}>Green Noddle</Text>
+                  <Text style={styles.minutepro}>Noodlle Home</Text>
+                </View>
+                <View>
+                  <Text style={styles.money}>$15</Text>
+                </View>
+              </View>
             </View>
-            <View>
-              <Text style={styles.money}>$15</Text>
-            </View>
-          </View>
-        </View>   
-      </ImageBackground>
-      </ScrollView>
-      
+            
+          </ImageBackground>
+
+        </ScrollView>
+      </GestureHandlerRootView>
+
     </View>
   );
 }
@@ -136,12 +141,13 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    marginLeft:25,
-    marginRight:20
+    marginLeft: 25,
+    marginRight: 20,
+    padding:20,
   },
   input: {
     height: 40,
-    width: 250,
+    width: 350,
     padding: 10,
     borderRadius: 10,
     backgroundColor: "#E6E1FF",
@@ -217,7 +223,7 @@ const styles = StyleSheet.create({
   textpro: {
     fontSize: 16,
     fontWeight: "bold",
-    marginRight:20,
+    marginRight: 20,
   },
   imgpro: {
     width: 110,
@@ -252,7 +258,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
   },
   textview: {
-    marginRight:10,
+    marginRight: 10,
     color: "#6B50F6",
     fontSize: 13,
     fontWeight: "300",
@@ -260,13 +266,13 @@ const styles = StyleSheet.create({
   menubar: {
     flexDirection: "row",
     justifyContent: "space-between",
-    backgroundColor:"#B1A9D6",
+    backgroundColor: "#B1A9D6",
   },
   service: {
     position: "relative",
-    flexDirection:"row",
-    justifyContent:"space-between",
-    alignItems:"center",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   searchIcon: {
     position: "absolute",
@@ -278,7 +284,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     zIndex: 1,
     paddingTop: 10,
-    paddingLeft: 50,
+    paddingLeft: 97,
     color: "#9481F9",
   },
 });
