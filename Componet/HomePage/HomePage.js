@@ -11,6 +11,8 @@ import {
 import React from "react";
 
 import Icon from "react-native-vector-icons/Ionicons";
+
+
 export default function HomePage() {
   const [text, onChangeText] = React.useState("");
   return (
@@ -109,38 +111,38 @@ export default function HomePage() {
           </View>
         </View>
         <View style={styles.menubar}>
-          <View>
+          <Pressable>
             <Icon
               style={styles.searchIcon}
               name="home-outline"
               size={20}
               color="#6B50F6"
             />
-          </View>
-          <View>
+          </Pressable>
+          <Pressable>
             <Icon
               style={styles.searchIcon}
               name="person-outline"
               size={20}
               color="#6B50F6"
             />
-          </View>
-          <View>
+          </Pressable>
+          <Pressable>
             <Icon
               style={styles.searchIcon}
-              name="bag-outline"
+              name="cart-outline"
               size={20}
               color="#6B50F6"
             />
-          </View>
-          <View>
+          </Pressable>
+          <Pressable>
             <Icon
               style={styles.searchIcon}
               name="chatbubbles-outline"
               size={20}
               color="#6B50F6"
             />
-          </View>
+          </Pressable>
         </View>
       </ImageBackground>
     </View>
@@ -278,11 +280,21 @@ const styles = StyleSheet.create({
     color: "#6B50F6",
     fontSize: 13,
     fontWeight: "300",
+  }
+  ,
+  middle:{
+    flex:1,
+    position:"relative"
   },
   menubar: {
-    flexDirection: "row",
+    position: "absolute",
+    flexDirection:"row",
     justifyContent: "space-between",
-    backgroundColor:"#B1A9D6",
+    alignItems:"center",
+    width:"20%",
+    zIndex: 1, 
+    bottom:50,
+    left:10,
   },
   service: {
     position: "relative",
@@ -292,7 +304,7 @@ const styles = StyleSheet.create({
   },
   searchIcon: {
     position: "absolute",
-    zIndex: 1,
+    zIndex: 2,
     paddingTop: 5,
     paddingLeft: 10,
   },
