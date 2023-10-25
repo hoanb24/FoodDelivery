@@ -35,6 +35,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import { createStackNavigator } from '@react-navigation/stack';
 import HomePage from './Componet/HomePage/HomePage';
 import Viewmore from './Componet/HomePage/Viewmore';
+import Callpage from './Componet/HomePage/Callpage';
 const Tab = createMaterialBottomTabNavigator();
 const Stack = createStackNavigator();
 export default function App() {
@@ -62,6 +63,17 @@ export default function App() {
           component={Viewmore}
           options={{
             tabBarLabel: 'Order',
+            tabBarIcon: ({ color }) => (
+              <MaterialCommunityIcons name="cart" color="#6B50F6" size={26} />
+            ),
+            headerShown: false,
+          }}
+        />
+        <Tab.Screen
+          name="PopularRestaurants"
+          component={Callpage}
+          options={{
+            tabBarLabel: 'Chat',
             tabBarIcon: ({ color }) => (
               <MaterialCommunityIcons name="cart" color="#6B50F6" size={26} />
             ),
