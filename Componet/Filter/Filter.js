@@ -24,7 +24,7 @@ export default function Filter() {
         style={styles.image}
       >
         <View style={styles.top}>
-          <Text style={styles.textC}>Find Your {`\n`} Favorite Food</Text>
+          <Text style={styles.textC}>Find Your {`\n`}Favorite Food</Text>
           <Icon
             style={styles.notificationIcon}
             name="notifications-outline"
@@ -33,23 +33,24 @@ export default function Filter() {
           />
         </View>
         <View style={styles.service}>
-          <SafeAreaView>
+          <SafeAreaView style={styles.centeredService}>
             <Icon
               style={styles.searchIcon}
               name="ios-search"
-              size={30}
+              size={25}
               color="#6B50F6"
             />
             <TextInput
               style={styles.input}
               onChangeText={onChangeText}
               value={text}
+              placeholder='What do you want to order?'
+              placeholderTextColor="#6B50F6" 
             />
-            <Text style={styles.textsearch}>What do you want to order?</Text>
           </SafeAreaView>
         </View>
 
-        <View>
+        <View style={styles.ctn_categorys}>
           <Text style={styles.Name_Categorys}>Type</Text>
           <View style={styles.Categorys}>
             <Pressable style={styles.Categorys_btn}>
@@ -62,13 +63,12 @@ export default function Filter() {
           </View>
         </View>
 
-        <View>
+        <View style={styles.ctn_categorys}>
             <Text style={styles.Name_Categorys}>Location</Text>
             <View style={styles.Categorys}>
               <Pressable style={styles.Categorys_btn}>
                 <Text style={styles.Categorys_btnText}>1 KM</Text>
               </Pressable>
-              
               <Pressable style={styles.Categorys_btn}>
                 <Text style={styles.Categorys_btnText}>{'>10 Km'}</Text>
               </Pressable>
@@ -78,7 +78,7 @@ export default function Filter() {
             </View>
         </View>
 
-        <View>
+        <View style={styles.ctn_categorys}>
           <Text style={styles.Name_Categorys}>Food</Text>
           <View style={styles.Categorys}>
               <Pressable style={styles.Categorys_btn}>
@@ -112,8 +112,9 @@ export default function Filter() {
 const styles = StyleSheet.create({
   top: {
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent:"space-around",
     alignItems: "center",
+    gap:30
   },
   textC: {
     fontSize: 30,
@@ -121,10 +122,10 @@ const styles = StyleSheet.create({
     marginTop: 30,
     marginBottom: 20,
   },
-  input: {
+  input:{
     height: 50,
-    width: 300,
-    padding: 10,
+    width: 320,
+    paddingLeft:50,
     borderRadius: 10,
     backgroundColor: "#E6E1FF",
   },
@@ -139,7 +140,7 @@ const styles = StyleSheet.create({
   searchIcon: {
     position: "absolute",
     zIndex: 2,
-    paddingTop: 5,
+    paddingTop: 12,
     paddingLeft: 10,
   },
   textsearch: {
@@ -147,7 +148,15 @@ const styles = StyleSheet.create({
     zIndex: 1,
     paddingTop: 10,
     paddingLeft: 50,
-    color: "#9481F9",
+    color: "#6B50F6",
+  },
+  ctn_categorys:{
+    marginTop:10,
+    paddingHorizontal:30
+  },
+  Name_Categorys:{
+    fontSize:16,
+    fontWeight:"900"
   },
   Categorys: {
     flexDirection: 'row',
@@ -166,11 +175,10 @@ const styles = StyleSheet.create({
     color:"#6B50F6"
   },
   Bottom_btn: {
-    position: 'absolute',
-    bottom: 0,
+    bottom: -100,
     alignSelf: 'center',
     backgroundColor: '#6B50F6',
-    width: '80%',
+    width:'80%',
     alignItems: 'center',
     borderRadius:20
   },
